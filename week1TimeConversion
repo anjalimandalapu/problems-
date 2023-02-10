@@ -1,0 +1,15 @@
+class Result {
+ public static String timeConversion(String s) {
+                      int i = Integer.parseInt(s.substring(0,2));
+                                    System.out.print(i);
+           if(s.substring(8).equals("AM") && s.substring(0,2).equals("12")){
+               String a="00";
+               s=a+s.substring(2);
+           }
+          else if(s.substring(8).equals("PM") && i<12){
+              i=i+12;
+              String j = String.valueOf(i);
+               s=j+s.substring(2);
+           }
+                      return s.substring(0,8);
+    }
