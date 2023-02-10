@@ -1,0 +1,16 @@
+
+class Result{
+public static List<Integer> matchingStrings(List<String> strings, List<String> queries) {
+      List<Integer> l = new ArrayList<Integer>();
+           for (String val:queries){
+               int c1=0;
+               for(int i=0;i<strings.size();i++){
+                   if(val.equals(strings.get(i))){
+                       c1++;
+                   }
+               }
+               l.add(c1);
+           }return l;
+    }
+
+}
