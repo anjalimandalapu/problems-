@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+class Candidate implements Comparable<Candidate>
+{
+    private String name;
+    private int marks;
+    public Candidate(String name ,int marks)
+    {
+    this.name=name;
+    this.marks=marks;
+    }
+    public String getName()
+    {
+    return name;
+    }
+    public int getMark()
+    {
+    return marks;
+    }
+    public int compareTo(Candidate two)
+    {
+        if(marks!=two.getMark())
+        {
+        return marks-(two.getMark());
+        }
+        return name.compareTo(two.getName());
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        List<Candidate>  students = new ArrayList<Candidate>();
+        for(int i=0;i<n;i++){
+           in.nextLine();
+           String name = in.next();
+           int marks = in.nextInt();
+           students.add(new Candidate(name,marks));
+        }
+        Collections.sort(students);
+        for(Candidate student : students){
+            System.out.println(student.getName()+" "+student.getMark());
+        }
+    }
+}
